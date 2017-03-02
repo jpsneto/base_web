@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @produto.descricao %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <%= @produto.unidade %>
+</p>
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @produto.fornecedor %>
+</p>
+
+<p>
+  <strong>Fabricante:</strong>
+  <%= @produto.fabricante %>
+</p>
+
+<p>
+  <strong>Preco custo:</strong>
+  <%= @produto.preco_custo %>
+</p>
+
+<p>
+  <strong>Margem lucro:</strong>
+  <%= @produto.margem_lucro %>
+</p>
+
+<p>
+  <strong>Custo medio:</strong>
+  <%= @produto.custo_medio %>
+</p>
+
+<p>
+  <strong>Preco venda:</strong>
+  <%= @produto.preco_venda %>
+</p>
+
+<p>
+  <strong>Estoque atual:</strong>
+  <%= @produto.estoque_atual %>
+</p>
+
+<p>
+  <strong>Estoque minimo:</strong>
+  <%= @produto.estoque_minimo %>
+</p>
+
+<p>
+  <strong>Observacoes:</strong>
+  <%= @produto.observacoes %>
+</p>
+
+<p>
+  <strong>Cst:</strong>
+  <%= @produto.cst %>
+</p>
+
+<p>
+  <strong>Aliquota ipi:</strong>
+  <%= @produto.aliquota_ipi %>
+</p>
+
+<p>
+  <strong>Codigo ipi:</strong>
+  <%= @produto.codigo_ipi %>
+</p>
+
+<p>
+  <strong>Aliquota icms:</strong>
+  <%= @produto.aliquota_icms %>
+</p>
+
+<p>
+  <strong>Base calculo:</strong>
+  <%= @produto.base_calculo %>
+</p>
+
+<p>
+  <strong>Peso bruto:</strong>
+  <%= @produto.peso_bruto %>
+</p>
+
+<p>
+  <strong>Peso liquido:</strong>
+  <%= @produto.peso_liquido %>
+</p>
+
+<p>
+  <strong>Precisao chegada:</strong>
+  <%= @produto.precisao_chegada %>
+</p>
+
+<%= link_to 'Edit', edit_produto_path(@produto) %> |
+<%= link_to 'Back', produtos_path %>

@@ -1,0 +1,2 @@
+json.extract! transportadora, :id, :nome, :logradouro, :numero, :complemento, :cidade, :estado, :telfone, :cnpj, :inscricao_estadual, :created_at, :updated_at
+json.url transportadora_url(transportadora, format: :json)

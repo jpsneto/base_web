@@ -1,0 +1,141 @@
+<!-- encoding: utf-8 -->
+<%= form_for(@fornecedor) do |f| %>
+    <% if @fornecedor.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@fornecedor.errors.count, "error") %> prohibited this fornecedor from being saved:</h2>
+
+          <ul>
+            <% @fornecedor.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="bs-callout bs-callout-info col-md-12">
+      <fieldset>
+        <legend>Informações pessoais</legend>
+      </fieldset>
+
+      <div class="form-group col-md-12">
+        <%= f.label :nome_fantasia %><br>
+        <%= f.text_field :nome_fantasia, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-12">
+        <%= f.label :contato %><br>
+        <%= f.text_field :contato, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-12">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-12">
+        <%= f.label :telefone %><br>
+        <%= f.text_field :telefone, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-12">
+        <%= f.label :fax %><br>
+        <%= f.text_field :fax, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-12">
+        <%= f.label :cnpj %><br>
+        <%= f.text_field :cnpj, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-12">
+        <%= f.label :inscricao_estadual %><br>
+        <%= f.text_field :inscricao_estadual, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-12">
+        <%= f.label :refenrecias_bancarias %><br>
+        <%= f.text_field :refenrecias_bancarias, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="bs-callout bs-callout-danger col-md-12">
+      <fieldset>
+        <legend>Endereço</legend>
+      </fieldset>
+      <div class="form-group col-md-8">
+        <%= f.label :logradouro %><br>
+        <%= f.text_field :logradouro, class: 'form-control' %>
+      </div>
+
+      <!--<div class="form-group col-md-2">-->
+        <%#= f.label :numero %><br>
+        <!--<%#= f.text_field :numero, class: 'form-control' %>-->
+      <!--</div>-->
+
+      <!--<div class="form-group col-md-2">-->
+        <%#= f.label :complemento %><br>
+        <!--<%#= f.text_field :complemento, class: 'form-control' %>-->
+      <!--</div>-->
+
+      <div class="form-group col-md-4">
+        <%= f.label :bairro %><br>
+        <%= f.text_field :bairro, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-4">
+        <%= f.label :cidade %><br>
+        <%= f.text_field :cidade, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-1">
+        <%= f.label :estado %><br>
+        <%= f.text_field :estado, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-3">
+        <%= f.label :cep %><br>
+        <%= f.text_field :cep, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="bs-callout bs-callout-danger col-md-12">
+      <fieldset>
+        <legend>Endereço</legend>
+      </fieldset>
+      <div class="form-group col-md-12">
+        <%= f.label :logradouro %><br>
+        <%= f.text_field :logradouro, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :bairro %><br>
+        <%= f.text_field :bairro, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :cidade %><br>
+        <%= f.text_field :cidade, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :estado %><br>
+        <%= f.text_field :estado, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :cep %><br>
+        <%= f.text_field :cep, class: 'form-control' %>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :observacoes %><br>
+      <%= f.text_area :observacoes, class: 'form-control' %>
+    </div>
+
+    <div class="actions pull-right">
+      <%= link_to t('all'), fornecedors_path, class: 'btn btn-default' %>
+      <%= f.submit class: 'btn btn-primary', data: {disable_with: t('processing')} %>
+    </div>
+<% end %>

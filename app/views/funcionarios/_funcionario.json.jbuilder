@@ -1,0 +1,2 @@
+json.extract! funcionario, :id, :user_id, :data_nascimento, :rg, :cpf, :salario, :data_admissao, :data_demissao, :dia_pagamento, :telefone, :celular, :logradouro, :numero, :complemento, :bairro, :cidade, :estado, :cep, :created_at, :updated_at
+json.url funcionario_url(funcionario, format: :json)

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Transportadoras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Logradouro</th>
+      <th>Numero</th>
+      <th>Complemento</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Telfone</th>
+      <th>Cnpj</th>
+      <th>Inscricao estadual</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transportadoras.each do |transportadora| %>
+      <tr>
+        <td><%= transportadora.nome %></td>
+        <td><%= transportadora.logradouro %></td>
+        <td><%= transportadora.numero %></td>
+        <td><%= transportadora.complemento %></td>
+        <td><%= transportadora.cidade %></td>
+        <td><%= transportadora.estado %></td>
+        <td><%= transportadora.telfone %></td>
+        <td><%= transportadora.cnpj %></td>
+        <td><%= transportadora.inscricao_estadual %></td>
+        <td><%= link_to 'Show', transportadora %></td>
+        <td><%= link_to 'Edit', edit_transportadora_path(transportadora) %></td>
+        <td><%= link_to 'Destroy', transportadora, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transportadora', new_transportadora_path %>

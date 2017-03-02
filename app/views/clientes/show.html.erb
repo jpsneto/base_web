@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @cliente.nome %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @cliente.telefone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cliente.email %>
+</p>
+
+<p>
+  <strong>Identidade:</strong>
+  <%= @cliente.identidade %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @cliente.cpf %>
+</p>
+
+<p>
+  <strong>Profissao:</strong>
+  <%= @cliente.profissao %>
+</p>
+
+<p>
+  <strong>Referencias comerciais:</strong>
+  <%= @cliente.referencias_comerciais %>
+</p>
+
+<p>
+  <strong>Referencias bancarias:</strong>
+  <%= @cliente.referencias_bancarias %>
+</p>
+
+<p>
+  <strong>Logradouro:</strong>
+  <%= @cliente.logradouro %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @cliente.numero %>
+</p>
+
+<p>
+  <strong>Complemento:</strong>
+  <%= @cliente.complemento %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @cliente.bairro %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @cliente.cidade %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @cliente.estado %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @cliente.cep %>
+</p>
+
+<p>
+  <strong>Observacoes:</strong>
+  <%= @cliente.observacoes %>
+</p>
+
+<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
+<%= link_to 'Back', clientes_path %>

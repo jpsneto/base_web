@@ -1,4 +1,9 @@
 BaseWeb::Application.routes.draw do
+  resources :transportadoras
+  resources :funcionarios
+  resources :clientes
+  resources :produtos
+  resources :fornecedors
   devise_for :users
   resources :users
   resources :roles do

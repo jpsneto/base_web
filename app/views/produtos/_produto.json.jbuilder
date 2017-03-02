@@ -1,0 +1,2 @@
+json.extract! produto, :id, :descricao, :unidade, :fornecedor_id, :fabricante, :preco_custo, :margem_lucro, :custo_medio, :preco_venda, :estoque_atual, :estoque_minimo, :observacoes, :cst, :aliquota_ipi, :codigo_ipi, :aliquota_icms, :base_calculo, :peso_bruto, :peso_liquido, :precisao_chegada, :created_at, :updated_at
+json.url produto_url(produto, format: :json)

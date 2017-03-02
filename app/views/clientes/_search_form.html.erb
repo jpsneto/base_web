@@ -1,0 +1,18 @@
+<%= search_form_for(@search) do |s| %>
+
+    <div class="form-group pull-right">
+      <%= s.condition_fields do |c| %>
+          <%= c.attribute_fields do |a| %>
+              <%= a.attribute_select({associations: [:category], prompt: "Selecione o filtro", include_blank: false}, {class: 'form-control-select'}) %>
+          <% end %>
+          <%= c.predicate_select({only: [:eq, :cont], compounds: false}, {class: 'form-control-select'}) %>
+          <%= c.value_fields do |v| %>
+              <%= v.text_field :value, class: 'form-control-select' %>
+          <% end %>
+      <% end %>
+
+      <%= s.submit t('search'), class: 'btn btn-primary' %>
+
+    </div>
+    <br>
+<% end %>

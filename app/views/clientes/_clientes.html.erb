@@ -1,0 +1,39 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= sort_link @search, :nome %> </th>
+    <th><%= sort_link @search, :telefone %> </th>
+    <th><%= sort_link @search, :email %></th>
+    <th><%= sort_link @search, :cpf %></th>
+    <th><%= sort_link @search, :logradouro %></th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td colspan="3"><strong>TOTAL</strong></td>
+    <td colspan="3"><strong><%= number_to_currency @total_dos_aportes %></strong></td>
+  </tr>
+  </tfoot>
+
+  <tbody>
+  <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= link_to cliente.nome, cliente %></td>
+        <td><%= cliente.telefone %></td>
+        <td><%= cliente.email %></td>
+        <td><%= cliente.cpf %></td>
+        <td><%= cliente.logradouro %></td>
+        <td><%= link_to '', edit_cliente_path(cliente), class: 'glyphicon glyphicon-pencil btn-xs btn-primary', title: t('edit') %></td>
+        <td><%= link_to '', cliente, method: :delete, data: {confirm: t('confirm_delete'), ok: t('ok'), cancel: t('cancel')}, class: 'glyphicon glyphicon-remove btn-xs btn-danger', title: t('delete') %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+<!-- <%#= assets_path %> + "bootstrap-liveeditor/grpbg.gif)-->

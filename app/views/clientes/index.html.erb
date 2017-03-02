@@ -1,0 +1,17 @@
+<h2><%= t '.title' %></h2>
+
+<hr>
+
+<%= render 'search_form' %>
+<%= link_to t('new'), new_cliente_path, class: 'btn btn-primary', style: 'margin-bottom: 25px;' %>
+
+<%= render_index(@clientes, 'clientes')%>
+<%#= @aportes.empty? ? (render partial: 'shared/no_records') : (render partial: 'aportes') -%>
+
+
+
+<div class="actions pull-right">
+  <%= link_to t('back'), :back, class: 'btn btn-default' %> <%= link_to t('new'), new_cliente_path, class: 'btn btn-primary ' %>
+</div>
+
+

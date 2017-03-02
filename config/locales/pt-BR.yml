@@ -52,15 +52,15 @@ pt-BR:
   rh_indireto: RH indireto
   title: Plano de Trabalho
   negado_acesso: Acesso Negado
-  financeiro_rhs:
+  clientes:
       index:
-        subtitle: Financeiros do RH
+        title: Clientes
       show:
-        subtitle: Financeiro do RH
+        title: Cliente
       new:
-        subtitle: Novo Financeiro do RH
+        title: Novo Cliente
       edit:
-        subtitle: Editar Financeido do RH
+        title: Editar Cliente
   activerecord:
     models:
       user: Usuário
