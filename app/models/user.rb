@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :roles, through: :role_users
   has_many :abilities, through: :roles
 
+  has_one :funcionario
+  accepts_nested_attributes_for :funcionario,  allow_destroy: true
+
   devise :database_authenticatable,
          #:registerable,
          :recoverable,

@@ -1,0 +1,30 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= sort_link @search, :descricao %> </th>
+    <th><%= sort_link @search, :preco_venda %> </th>
+    <th><%= sort_link @search, :fabricante %> </th>
+    <th><%= sort_link @search, :estoque_atual %></th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @produtos.each do |produto| %>
+      <tr>
+        <td><%= link_to produto.descricao, produto %></td>
+        <td><%= number_to_currency produto.preco_venda %></td>
+        <td><%= produto.fabricante %></td>
+        <td><%= produto.estoque_atual %></td>
+        <td><%= link_to '', edit_produto_path(produto), class: 'glyphicon glyphicon-pencil btn-xs btn-primary', title: t('edit') %></td>
+        <td><%= link_to '', produto, method: :delete, data: {confirm: t('confirm_delete'), ok: t('ok'), cancel: t('cancel')}, class: 'glyphicon glyphicon-remove btn-xs btn-danger', title: t('delete') %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+<!-- <%#= assets_path %> + "bootstrap-liveeditor/grpbg.gif)-->

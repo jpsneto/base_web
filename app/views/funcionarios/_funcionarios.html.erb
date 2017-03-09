@@ -1,0 +1,34 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <!--<th>Nome </th>-->
+    <th><%= sort_link @search, :cpf %></th>
+    <th><%= sort_link @search, :telefone %> </th>
+    <th><%= sort_link @search, :celular %></th>
+
+    <th><%= sort_link @search, :logradouro %></th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @funcionarios.each do |funcionario| %>
+      <tr>
+        <!--<td><%#= link_to funcionario.nome, funcionario %></td>-->
+        <td><%= funcionario.cpf %></td>
+        <td><%= funcionario.telefone %></td>
+        <td><%= funcionario.celular %></td>
+
+        <td><%= funcionario.logradouro %></td>
+        <td><%= link_to '', edit_funcionario_path(funcionario), class: 'glyphicon glyphicon-pencil btn-xs btn-primary', title: t('edit') %></td>
+        <td><%= link_to '', funcionario, method: :delete, data: {confirm: t('confirm_delete'), ok: t('ok'), cancel: t('cancel')}, class: 'glyphicon glyphicon-remove btn-xs btn-danger', title: t('delete') %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+<!-- <%#= assets_path %> + "bootstrap-liveeditor/grpbg.gif)-->

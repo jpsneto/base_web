@@ -1,93 +1,115 @@
+<!-- encoding: utf-8 -->
 <%= form_for(@produto) do |f| %>
-  <% if @produto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+    <% if @produto.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
 
-      <ul>
-      <% @produto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @produto.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :descricao %><br>
+      <%= f.text_field :descricao, class: 'form-control' %>
     </div>
-  <% end %>
+    <div class="form-group">
+      <%= f.label :unidade %><br>
+      <%= enum_select f, :unidade, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :fornecedor_id %><br>
+      <%= f.text_field :fornecedor_id, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :fabricante %><br>
+      <%= f.text_field :fabricante, class: 'form-control' %>
+    </div>
+    <div class="bs-callout bs-callout-danger col-md-12">
+      <fieldset>
+        <legend>Financeiro</legend>
+      </fieldset>
+      <div class="form-group">
+        <%= f.label :preco_custo %><br>
+        <%= f.text_field :preco_custo, class: 'form-control field-moeda' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :margem_lucro %><br>
+        <%= f.text_field :margem_lucro, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :custo_medio %><br>
+        <%= f.text_field :custo_medio, class: 'form-control field-moeda' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :preco_venda %><br>
+        <%= f.text_field :preco_venda, class: 'form-control field-moeda' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :descricao %><br>
-    <%= f.text_field :descricao %>
-  </div>
-  <div class="field">
-    <%= f.label :unidade %><br>
-    <%= f.number_field :unidade %>
-  </div>
-  <div class="field">
-    <%= f.label :fornecedor_id %><br>
-    <%= f.text_field :fornecedor_id %>
-  </div>
-  <div class="field">
-    <%= f.label :fabricante %><br>
-    <%= f.text_field :fabricante %>
-  </div>
-  <div class="field">
-    <%= f.label :preco_custo %><br>
-    <%= f.text_field :preco_custo %>
-  </div>
-  <div class="field">
-    <%= f.label :margem_lucro %><br>
-    <%= f.text_field :margem_lucro %>
-  </div>
-  <div class="field">
-    <%= f.label :custo_medio %><br>
-    <%= f.text_field :custo_medio %>
-  </div>
-  <div class="field">
-    <%= f.label :preco_venda %><br>
-    <%= f.text_field :preco_venda %>
-  </div>
-  <div class="field">
-    <%= f.label :estoque_atual %><br>
-    <%= f.text_field :estoque_atual %>
-  </div>
-  <div class="field">
-    <%= f.label :estoque_minimo %><br>
-    <%= f.text_field :estoque_minimo %>
-  </div>
-  <div class="field">
-    <%= f.label :observacoes %><br>
-    <%= f.text_area :observacoes %>
-  </div>
-  <div class="field">
-    <%= f.label :cst %><br>
-    <%= f.text_field :cst %>
-  </div>
-  <div class="field">
-    <%= f.label :aliquota_ipi %><br>
-    <%= f.text_field :aliquota_ipi %>
-  </div>
-  <div class="field">
-    <%= f.label :codigo_ipi %><br>
-    <%= f.text_field :codigo_ipi %>
-  </div>
-  <div class="field">
-    <%= f.label :aliquota_icms %><br>
-    <%= f.text_field :aliquota_icms %>
-  </div>
-  <div class="field">
-    <%= f.label :base_calculo %><br>
-    <%= f.text_field :base_calculo %>
-  </div>
-  <div class="field">
-    <%= f.label :peso_bruto %><br>
-    <%= f.text_field :peso_bruto %>
-  </div>
-  <div class="field">
-    <%= f.label :peso_liquido %><br>
-    <%= f.text_field :peso_liquido %>
-  </div>
-  <div class="field">
-    <%= f.label :precisao_chegada %><br>
-    <%= f.date_select :precisao_chegada %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="bs-callout bs-callout-danger col-md-12">
+      <fieldset>
+        <legend>Físico</legend>
+      </fieldset>
+      <div class="form-group">
+        <%= f.label :estoque_atual %><br>
+        <%= f.text_field :estoque_atual, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :estoque_minimo %><br>
+        <%= f.text_field :estoque_minimo, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :peso_bruto %><br>
+        <%= f.text_field :peso_bruto, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :peso_liquido %><br>
+        <%= f.text_field :peso_liquido, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :precisao_chegada %><br>
+        <%= date_picker_for f, :precisao_chegada, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="bs-callout bs-callout-danger col-md-12">
+      <fieldset>
+        <legend>Dados fiscais</legend>
+      </fieldset>
+      <div class="form-group">
+        <%= f.label :cst %><br>
+        <%= f.text_field :cst, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :aliquota_ipi %><br>
+        <%= f.text_field :aliquota_ipi, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :codigo_ipi %><br>
+        <%= f.text_field :codigo_ipi, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :aliquota_icms %><br>
+        <%= f.text_field :aliquota_icms, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :base_calculo %><br>
+        <%= f.text_field :base_calculo, class: 'form-control' %>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <%= f.label :observacoes %><br>
+      <%= f.text_area :observacoes, class: 'form-control' %>
+    </div>
+    <div class="actions pull-right">
+      <%= link_to t('all'), produtos_path, class: 'btn btn-default' %>
+      <%= f.submit class: 'btn btn-primary', data: {disable_with: t('processing')} %>
+    </div>
 <% end %>

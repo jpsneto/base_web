@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.build_funcionario
+
   end
 
   def edit
@@ -42,7 +44,10 @@ class UsersController < ApplicationController
   end
 
   def user_params # Never trust parameters from the scary internet, only allow the white list through.
-    params.require(:user).permit(:name, :email, :password, :locked, role_ids: [])
+    puts "PARAMS ########## #{params}"
+    params.require(:user).permit(:name, :email, :password, :locked, role_ids: [],
+                                 funcionario_attributes: [:id,:user_id, :data_nascimento, :rg, :cpf, :salario, :data_admissao, :data_demissao, :dia_pagamento, :telefone, :celular, :logradouro,  :numero, :complemento, :bairro,:cidade, :estado, :cep])
+
   end
 
   def pundit_auth

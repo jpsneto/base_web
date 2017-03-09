@@ -3,7 +3,6 @@
 <hr>
 
 <%= render 'search_form' %>
-<%= link_to t('new'), new_cliente_path, class: 'btn btn-primary', style: 'margin-bottom: 25px;' %>
 
 <%= render_index(@clientes, 'clientes')%>
 <%#= @aportes.empty? ? (render partial: 'shared/no_records') : (render partial: 'aportes') -%>

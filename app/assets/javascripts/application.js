@@ -17,6 +17,7 @@
 //= require jquery-fileupload
 //= require jquery.numeric.rjo
 //= require jquery.maskedinput.min
+//= require jquery.maskMoney.min
 //= require jquery.data-checkall-control
 //= require nested_form
 //= require bootstrap 

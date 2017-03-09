@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228000451) do
+ActiveRecord::Schema.define(version: 20170308231922) do
 
   PRAGMA FOREIGN_KEYS = ON;
   create_table "abilities", force: :cascade do |t|
@@ -75,36 +75,12 @@ ActiveRecord::Schema.define(version: 20170228000451) do
     t.datetime "updated_at",            :null=>false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  :default=>"", :null=>false, :index=>{:name=>"index_users_on_email", :unique=>true}
-    t.string   "encrypted_password",     :default=>"", :null=>false
-    t.string   "reset_password_token",   :index=>{:name=>"index_users_on_reset_password_token", :unique=>true}
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default=>0, :null=>false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "locale"
-    t.boolean  "locked",                 :default=>false
-    t.string   "name"
-    t.string   "confirmation_token",     :index=>{:name=>"index_users_on_confirmation_token", :unique=>true}
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.integer  "failed_attempts",        :default=>0, :null=>false
-    t.string   "unlock_token"
-    t.datetime "locked_at"
-  end
-
   create_table "funcionarios", force: :cascade do |t|
-    t.integer  "user_id",         :index=>{:name=>"index_funcionarios_on_user_id"}, :foreign_key=>{:references=>"users", :name=>"fk_funcionarios_user_id", :on_update=>:no_action, :on_delete=>:no_action}
+    t.integer  "user_id",         :index=>{:name=>"index_funcionarios_on_user_id"}
     t.date     "data_nascimento"
     t.string   "rg"
     t.string   "cpf"
-    t.string   "salario"
+    t.decimal  "salario"
     t.date     "data_admissao"
     t.date     "data_demissao"
     t.string   "dia_pagamento"
@@ -143,6 +119,30 @@ ActiveRecord::Schema.define(version: 20170228000451) do
     t.date     "precisao_chegada"
     t.datetime "created_at",       :null=>false
     t.datetime "updated_at",       :null=>false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  :default=>"", :null=>false, :index=>{:name=>"index_users_on_email", :unique=>true}
+    t.string   "encrypted_password",     :default=>"", :null=>false
+    t.string   "reset_password_token",   :index=>{:name=>"index_users_on_reset_password_token", :unique=>true}
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default=>0, :null=>false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "locale"
+    t.boolean  "locked",                 :default=>false
+    t.string   "name"
+    t.string   "confirmation_token",     :index=>{:name=>"index_users_on_confirmation_token", :unique=>true}
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.integer  "failed_attempts",        :default=>0, :null=>false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
   end
 
   create_table "roles_users", id: false, force: :cascade do |t|

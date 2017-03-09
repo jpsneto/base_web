@@ -9,13 +9,6 @@
     <th colspan="2"></th>
   </tr>
   </thead>
-  <tfoot>
-  <tr>
-    <td colspan="3"><strong>TOTAL</strong></td>
-    <td colspan="3"><strong><%= number_to_currency @total_dos_aportes %></strong></td>
-  </tr>
-  </tfoot>
-
   <tbody>
   <% @clientes.each do |cliente| %>
       <tr>

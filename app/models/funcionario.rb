@@ -1,5 +1,6 @@
 class Funcionario < ActiveRecord::Base
   belongs_to :user
+  #has_one :user
 end
 
 # == Schema Information
@@ -11,7 +12,7 @@ end
 #  data_nascimento :date
 #  rg              :string
 #  cpf             :string
-#  salario         :string
+#  salario         :decimal(, )
 #  data_admissao   :date
 #  data_demissao   :date
 #  dia_pagamento   :string

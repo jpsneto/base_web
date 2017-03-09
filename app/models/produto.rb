@@ -1,6 +1,9 @@
 class Produto < ActiveRecord::Base
   belongs_to :fornecedor
   validates :descricao, presence: true
+
+  enum unidade: [:pc, :kg, :g, :lt, :m, :cm, :m2, :m3]
+
 end
 
 # == Schema Information
