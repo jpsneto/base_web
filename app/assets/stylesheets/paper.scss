@@ -1,0 +1,26 @@
+$icon-font-path: "";
+
+@import 'metro-tiles';
+
+// First import paper variables
+@import "paper/variables";
+
+@import "bootstrap-sprockets";
+// Then bootstrap itself
+@import "bootstrap";
+
+// And finally bootswatch style itself
+
+@import "paper/bootswatch";
+
+@import 'sticky';
+@import 'error_messages';
+
+.navbar-nav li a:hover, a.navbar-brand {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.navbar-nav li a:active {
+  font-weight: 600;
+}

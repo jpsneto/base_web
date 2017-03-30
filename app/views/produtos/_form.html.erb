@@ -28,6 +28,10 @@
       <%= f.label :fabricante %><br>
       <%= f.text_field :fabricante, class: 'form-control' %>
     </div>
+    <div class="form-group">
+      <%= f.label 'Imagem' %>
+      <%= f.file_field :attachment %>
+    </div>
     <div class="bs-callout bs-callout-danger col-md-12">
       <fieldset>
         <legend>Financeiro</legend>
@@ -101,9 +105,6 @@
         <%= f.text_field :base_calculo, class: 'form-control' %>
       </div>
     </div>
-
-
-
     <div class="form-group">
       <%= f.label :observacoes %><br>
       <%= f.text_area :observacoes, class: 'form-control' %>

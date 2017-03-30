@@ -1,0 +1,21 @@
+<%= form_tag controller: 'produtos', action: 'create_multiple' do %>
+    <% @produtos.each_with_index do |produto, idx| %>
+        <%= fields_for "produto[#{idx}]", produto do |p| %>
+
+            <div class="field">
+              <%= p.label :descricao %><br>
+              <%= p.text_field :descricao %>
+            </div>
+            <div class="field">
+              <%= p.label :preco_venda %><br>
+              <%= p.text_field :preco_venda %>
+            </div>
+
+        <% end %>
+    <% end %>
+    <div class="actions">
+      <%= submit_tag %>
+    </div>
+<% end %>
+
+d

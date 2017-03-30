@@ -30,6 +30,9 @@
 //= require bootstrap-datetimepicker
 //= require pickers
 
+//= require material.min
+//= require nouislider.min
+
 //------------------------------------ MASCARA QTD  ------------------------------------------------------
 function mascararQtd(_qtd) { // $(".qtd").maskMoney({thousands:'', decimal:'.', precision: 3});
     _qtd.numeric();

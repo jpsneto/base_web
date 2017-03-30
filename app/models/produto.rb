@@ -4,6 +4,8 @@ class Produto < ActiveRecord::Base
 
   enum unidade: [:pc, :kg, :g, :lt, :m, :cm, :m2, :m3]
 
+  mount_uploader :attachment, AttachmentUploader
+
 end
 
 # == Schema Information
@@ -32,6 +34,7 @@ end
 #  precisao_chegada :date
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  attachment       :string
 #
 # Indexes
 #

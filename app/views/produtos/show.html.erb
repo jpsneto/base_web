@@ -1,3 +1,4 @@
+<!-- encoding: utf-8 -->
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -94,6 +95,15 @@
   <strong>Precisao chegada:</strong>
   <%= @produto.precisao_chegada %>
 </p>
+
+<h4>Avatar vários tamanhos</h4>
+Thumb:
+<%= image_tag(@produto.attachment.thumb) if @produto.attachment %>
+Medium:
+<%= image_tag(@produto.attachment.medium) if @produto.attachment %>
+Big:
+<%= image_tag(@produto.attachment.big) if @produto.attachment %>
+<hr/>
 
 <%= link_to 'Edit', edit_produto_path(@produto) %> |
 <%= link_to 'Back', produtos_path %>
